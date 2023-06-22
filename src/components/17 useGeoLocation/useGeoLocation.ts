@@ -14,7 +14,7 @@ interface PositionError {
   TIMEOUT: number;
 }
 
-export default function useGeolocation(options: GeolocationOptions) {
+export default function useGeolocation(options?: GeolocationOptions) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<PositionError | null>(null);
   const [data, setData] = useState<GeolocationCoordinates | null>(null);

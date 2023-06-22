@@ -1,16 +1,15 @@
-import useGeolocation, { PositionError } from "./useGeolocation";
+import useGeolocation from "./useGeoLocation";
 
-interface GeolocationData {
-  latitude: number;
-  longitude: number;
-}
+
 
 export default function GeolocationComponent() {
   const {
     loading,
     error,
-    data: { latitude, longitude },
+    data,
   } = useGeolocation();
+  console.log(data)
+  const {latitude,longitude} = data || {};
 
   return (
     <>
